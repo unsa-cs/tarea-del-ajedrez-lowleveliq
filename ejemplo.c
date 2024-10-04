@@ -2,8 +2,9 @@
 #include "figures.h"
 
 void display(){
-  char** blackKnight = reverse(knight);
-  char** joined = join(blackKnight, bishop);
-  interpreter(blackKnight);
+  char** BlackQueen = reverse(queen);
+  char** joined = join(BlackQueen, pawn);
+  interpreter(BlackQueen);
   interpreter(joined);
+
 }
