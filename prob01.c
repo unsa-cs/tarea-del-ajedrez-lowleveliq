@@ -16,6 +16,18 @@ char** drawPieces(char ***pieces, int size, char** previousJoin) {
   return drawPieces(pieces, size - 1, joined);
 }
 
+void freePiece(char **piece) {
+  for (int i = 0; i <sizeof(whiteSquare) / sizeof(char *); ++i)
+    free(piece[i]);
+}
+
+void prob01() {
+  char **blackSquare = reverse(whiteSquare);
+  interpreter(blackSquare);
+  freePiece(blackSquare);
+}
+
 void display() {
-  interpreter(repeatV(drawPieces(pieces, SIZE_BOARD, NULL), SIZE_BOARD));
+  /* interpreter(repeatV(drawPieces(pieces, SIZE_BOARD, NULL), SIZE_BOARD)); */
+  prob01();
 }
