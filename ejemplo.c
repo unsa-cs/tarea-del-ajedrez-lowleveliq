@@ -6,7 +6,6 @@ void display() {
   char **bothblocks = join(blackSquare, whiteSquare);
   char **row = repeatH(bothblocks, 4);
   char **row2 = reverse(row);
-  char **bothbrows = up(row,row2);
-  char **bothbrows2 = up(bothbrows,bothbrows);
-  interpreter(bothbrows2);
+  char **bothbrows = repeatV(up(row,row2),2);
+  interpreter(bothbrows);
 }
