@@ -5,5 +5,5 @@ void display() {
   char **blackSquare = reverse(whiteSquare);
   char **bothblocks = join(whiteSquare, blackSquare);
   char **row = repeatH(bothblocks, 4);
-  interpreter(reverse(row));
+  interpreter(flipV(row));
 }
