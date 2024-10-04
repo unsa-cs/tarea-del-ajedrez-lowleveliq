@@ -3,7 +3,7 @@
 
 void display() {
   char **blackSquare = reverse(whiteSquare);
-  char **bothblocks = join(whiteSquare, blackSquare);
+  char **bothblocks = join(blackSquare, whiteSquare);
   char **row = repeatH(bothblocks, 4);
-  interpreter(flipV(row));
+  interpreter(row);
 }
