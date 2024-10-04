@@ -2,10 +2,8 @@
 #include "figures.h"
 
 void display() {
-  char **whiteblock = whiteSquare;
-  char **blackblock = reverse(whiteSquare);
-  char **bothblocks = join(whiteblock, blackblock);
-  char **row = join(bothblocks, bothblocks);
-  char **row2 = join(row, row);
-  interpreter(row2);
+  char **blackSquare = reverse(whiteSquare);
+  char **bothblocks = join(whiteSquare, blackSquare);
+  char **row = repeatH(bothblocks, 4);
+  interpreter(row);
 }
