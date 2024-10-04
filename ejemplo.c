@@ -3,7 +3,7 @@
 
 void display(){
   char** blackKnight = reverse(knight);
-  char** blackbiShop = reverse(bishop);
+  char** joined = join(blackKnight, bishop);
   interpreter(blackKnight);
-  interpreter(blackbiShop);
+  interpreter(joined);
 }
