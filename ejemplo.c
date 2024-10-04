@@ -2,9 +2,15 @@
 #include "figures.h"
 #include <stdlib.h>
 void display(){
-  char** BlackQueen = reverse(queen);
-  char** joined = join(BlackQueen, pawn);
-  interpreter(joined);
-  free(BlackQueen);
-  free(joined);
+  char** background = reverse(whiteSquare);
+  char** super = superImpose(knight, background);
+  char** doble = repeatH(super,2);
+  char** rotate = rotateL(doble);
+  char** flip = flipV(rotate);
+  interpreter(flip);
+  free(background);
+  free(super);
+  free(rotate);
+  free(doble);
+  free(flip);
 }
