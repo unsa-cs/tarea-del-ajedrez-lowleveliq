@@ -2,6 +2,7 @@
 #include "figures.h"
 void display(){
   char** whiteblock = whiteSquare;
-  char** block = repeatH(whiteblock, 8);
-  interpreter(block);
+  char** blackblock = reverse(whiteSquare);
+  char** bothblocks = join(whiteblock, blackblock);
+  interpreter(bothblocks);
 }
