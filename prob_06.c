@@ -20,6 +20,7 @@ void display() {
   char **piezasNegras = reverse(up(peones, piezas));
   char **fullWhiteRow = superImpose(piezasBlancas, twoRows);
   char **fullBlackRow = superImpose(piezasNegras, twoRows);
+  char **middleGround = repeatV(twoRows, 2);
 
-  interpreter(fullBlackRow);
+  interpreter(middleGround);
 }
