@@ -16,5 +16,8 @@ void display() {
   char **middleUpperKnights = join(topLeftKnight, topRightKnight);
   char **middleUpperRow = join(join(threeSquares, middleUpperKnights),reversethreeSquares);
 
-  interpreter(middleUpperRow);
+  char **middleLowerRow = rotateR(rotateR(middleUpperRow));
+  char **middleRows = up(middleUpperRow, middleLowerRow);
+
+  interpreter(middleRows);
 }
