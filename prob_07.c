@@ -10,6 +10,11 @@ void display() {
   char **bottomthreerows = reverse(topthreerows);
 
   char **threeSquares = join(join(whiteSquare,blackSquare),whiteSquare);
+  char **reversethreeSquares = reverse(threeSquares);
+  char **topLeftKnight = superImpose(knight, blackSquare);
+  char **topRightKnight = superImpose(rotateR(knight), whiteSquare);
+  char **middleUpperKnights = join(topLeftKnight, topRightKnight);
+  char **middleUpperRow = join(join(threeSquares, middleUpperKnights),reversethreeSquares);
 
-  interpreter(topthreerows);
+  interpreter(middleUpperRow);
 }
