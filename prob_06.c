@@ -5,7 +5,9 @@
 void display() {
   char **blackSquare = reverse(whiteSquare);
   char **bothblocks = join(blackSquare, whiteSquare);
-  char **row = repeatH(bothblocks, 4);
+  char **oddRow = repeatH(bothblocks, 4);
+  char **evenRow = reverse(oddRow);
+  char **twoRows = up(oddRow, evenRow);
   char **piezas = join(rook, knight);
   piezas = join(piezas, bishop);
   piezas = join(piezas, queen);
@@ -15,7 +17,7 @@ void display() {
   piezas = join(piezas, rook);
   char **peones = repeatH(pawn, 8);
   piezas = up(piezas, peones);
-  char **fullrow = superImpose(piezas, row);
+  char **fullrow = superImpose(piezas, twoRows);
 
   interpreter(fullrow);
 }
