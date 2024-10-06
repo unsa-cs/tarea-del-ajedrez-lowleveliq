@@ -16,8 +16,10 @@ void display() {
   piezas = join(piezas, knight);
   piezas = join(piezas, rook);
   char **peones = repeatH(pawn, 8);
-  piezas = up(piezas, peones);
-  char **fullrow = superImpose(piezas, twoRows);
+  char **piezasBlancas = up(piezas, peones);
+  char **piezasNegras = reverse(up(peones, piezas));
+  char **fullWhiteRow = superImpose(piezasBlancas, twoRows);
+  char **fullBlackRow = superImpose(piezasNegras, twoRows);
 
-  interpreter(fullrow);
+  interpreter(fullBlackRow);
 }
